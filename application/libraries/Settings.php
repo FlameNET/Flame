@@ -1,4 +1,5 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*
  * Copyright (C) 2020 FlameCMS <NOT YET>
@@ -17,28 +18,26 @@
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-class Settings {
+class Settings
+{
+    
+    var $info = array();
+    var $version = "1.0.0";
 
-	var $info = array();
-
-	var $version = "1.0.0";
-
-
-	public function __construct() 
-	{
-		/**
-		 * Template Default 
-		 */
-		$id_template = 1;
-
-		$CI =& get_instance();
-		$site = $CI->db->query("CALL `sp_site_settings`({$id_template})");
-		
-		if($site->num_rows() == 0) {
-			$CI->template->error("You are missing the site settings database row.");
-		} else {
-			$this->info = $site->row();
-		}
-	}
-
+    public function __construct()
+    {
+        /**
+         * Template Default 
+         */
+        $id_template = 1;
+        
+        $CI =& get_instance();
+        $site = $CI->db->query("CALL `sp_site_settings`({$id_template})");
+        
+        if ($site->num_rows() == 0) {
+            $CI->template->error("You are missing the site settings database row.");
+        } else {
+            $this->info = $site->row();
+        }
+    }
 }
