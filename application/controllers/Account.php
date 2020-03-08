@@ -27,6 +27,10 @@ class Account extends CI_Controller
         $this->load->model(array(
             'account_model'
         ));
+        
+        $this->load->helper(array(
+            'account_helper'
+        ));
     }
     
     public function index()
@@ -101,7 +105,7 @@ class Account extends CI_Controller
             $answer    = $this->input->post("answer1", true);
             $username  = $this->common->nohtml($this->input->post("username", true));
             $offer     = $this->input->post("receiveNewsSpecialOffersFlame", true);
-            
+
             if (strlen($username) < 3)
                 $fail = "error_31";
             
@@ -250,10 +254,12 @@ class Account extends CI_Controller
             
             if (empty($fail)) {
                 
-                $pass          = $this->common->encrypt($pass);
-                $active        = 1;
-                $activate_code = "";
-                $success       = lang("success_20");
+                $bnetpassword       = encryp_BattleNet($email, $pass);
+                $account_password   = encryp_auth($username, $pass);
+                $pass               = $this->common->encrypt($pass);
+                $active             = 1;
+                $activate_code      = "";
+                $success            = lang("success_20");
                 if ($this->settings->info->activate_account) {
                     $active        = 0;
                     $activate_code = md5(rand(1, 100000) . "fhsf" . rand(1, 10000));
@@ -317,17 +323,13 @@ class Account extends CI_Controller
                  * Register Battlenet Accounts
                  */
                 // Battlenet Password
-                $bnetpassword = strtoupper(bin2hex(strrev(hex2bin(strtoupper(hash("sha256", strtoupper(hash("sha256", strtoupper($email)) . ":" . strtoupper($pass))))))));
-                
-                $bnetId           = $this->account_model->register_auth_battlenet_accounts(array(
+                $bnetId = $this->account_model->register_auth_battlenet_accounts(array(
                     'email' => $email,
                     'sha_pass_hash' => $bnetpassword
                 ));
-                $bnetusername     = $bnetId . "#1";
-                $account_password = sha1(strtoupper($username) . ":" . strtoupper($pass));
-                
+
                 $this->account_model->register_auth_accounts(array(
-                    'username' => $bnetusername,
+                    'username' => $username,
                     'sha_pass_hash' => $account_password,
                     'email' => $email,
                     'expansion' => 7,
@@ -387,7 +389,7 @@ class Account extends CI_Controller
                     ));
                 }
                 $this->session->set_flashdata("globalmsg", $success);
-                redirect(site_url("login"));
+                redirect(site_url());
             }
         }
         
