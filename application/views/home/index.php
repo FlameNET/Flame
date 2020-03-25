@@ -21,7 +21,7 @@
                 <div class="align-left">
                     <div media-small="gutter-vertical" media-large="!gutter-vertical">
                         <div class="align-center" media-wide="!align-center">
-                            <div class="font-semp-xxxLarge-white text-upper">Comienza la temporada 4 de Battle for Azeroth</div>
+                            <div class="font-semp-xxxLarge-white text-upper"><?php echo lang('home_1'); ?></div>
                             <div class="contain-masthead" media-wide="contain-left">
                                 <div class="space-rhythm-medium"></div>
                                 <div class="font-bliz-light-medium-beige">Enfrentaos al dios antiguo N'Zoth y a sus secuaces en Ny'alotha, Ciudad del Despertar, a doce nuevos jefes de bandas y a vuestros enemigos en las arenas y los campos de batalla, y poneos a prueba en exigentes mazmorras de piedra angular mítica para conseguir recompensas maravillosas.</div>

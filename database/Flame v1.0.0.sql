@@ -11,7 +11,7 @@
  Target Server Version : 100410
  File Encoding         : 65001
 
- Date: 07/03/2020 23:15:40
+ Date: 25/03/2020 14:39:18
 */
 
 SET NAMES utf8mb4;
@@ -22,13 +22,13 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `ci_sessions`;
 CREATE TABLE `ci_sessions`  (
-  `id` varchar(128) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `ip_address` varchar(45) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `id` varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `ip_address` varchar(45) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `timestamp` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `data` blob NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `ci_sessions_timestamp`(`timestamp`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for countries
@@ -297,16 +297,16 @@ INSERT INTO `countries` VALUES (246, 'ZW', 'Zimbabwe');
 DROP TABLE IF EXISTS `custom_fields`;
 CREATE TABLE `custom_fields`  (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `type` int(11) NOT NULL,
-  `options` varchar(2000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `options` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `required` int(11) NOT NULL,
   `profile` int(11) NOT NULL,
   `edit` int(11) NOT NULL,
-  `help_text` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `help_text` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `register` int(11) NOT NULL,
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for email_templates
@@ -314,13 +314,13 @@ CREATE TABLE `custom_fields`  (
 DROP TABLE IF EXISTS `email_templates`;
 CREATE TABLE `email_templates`  (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `message` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `hook` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `language` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `title` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `message` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `hook` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `language` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of email_templates
@@ -344,7 +344,7 @@ CREATE TABLE `home_stats`  (
   `active_today` int(11) NOT NULL DEFAULT 0,
   `timestamp` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of home_stats
@@ -357,8 +357,8 @@ INSERT INTO `home_stats` VALUES (1, 0, 0, 0, 2, 0, 1, 1536070611);
 DROP TABLE IF EXISTS `invites`;
 CREATE TABLE `invites`  (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `code` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `code` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `expires` int(11) NOT NULL,
   `expire_upon_use` int(11) NOT NULL,
   `status` int(11) NOT NULL,
@@ -366,7 +366,7 @@ CREATE TABLE `invites`  (
   `timestamp` int(11) NOT NULL,
   `bypass_register` int(11) NOT NULL,
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for ip_block
@@ -374,11 +374,11 @@ CREATE TABLE `invites`  (
 DROP TABLE IF EXISTS `ip_block`;
 CREATE TABLE `ip_block`  (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `IP` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `IP` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   `timestamp` int(11) NOT NULL DEFAULT 0,
-  `reason` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `reason` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for ipn_log
@@ -386,11 +386,11 @@ CREATE TABLE `ip_block`  (
 DROP TABLE IF EXISTS `ipn_log`;
 CREATE TABLE `ipn_log`  (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `data` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `data` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `timestamp` int(11) NOT NULL DEFAULT 0,
-  `IP` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `IP` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for login_attempts
@@ -398,12 +398,12 @@ CREATE TABLE `ipn_log`  (
 DROP TABLE IF EXISTS `login_attempts`;
 CREATE TABLE `login_attempts`  (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `IP` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `username` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `IP` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `username` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   `count` int(11) NOT NULL DEFAULT 0,
   `timestamp` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for masthead
@@ -424,11 +424,11 @@ DROP TABLE IF EXISTS `password_reset`;
 CREATE TABLE `password_reset`  (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `userid` int(11) NOT NULL DEFAULT 0,
-  `token` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `token` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   `timestamp` int(11) NOT NULL DEFAULT 0,
-  `IP` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `IP` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for payment_logs
@@ -439,11 +439,11 @@ CREATE TABLE `payment_logs`  (
   `userid` int(11) NOT NULL DEFAULT 0,
   `amount` decimal(10, 2) NOT NULL DEFAULT 0,
   `timestamp` int(11) NOT NULL DEFAULT 0,
-  `email` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `processor` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `hash` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `processor` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `hash` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for payment_plans
@@ -451,16 +451,16 @@ CREATE TABLE `payment_logs`  (
 DROP TABLE IF EXISTS `payment_plans`;
 CREATE TABLE `payment_plans`  (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `hexcolor` varchar(6) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `fontcolor` varchar(6) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `hexcolor` varchar(6) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `fontcolor` varchar(6) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   `cost` decimal(10, 2) NOT NULL DEFAULT 0,
   `days` int(11) NOT NULL DEFAULT 0,
   `sales` int(11) NOT NULL DEFAULT 0,
-  `description` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `icon` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `description` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `icon` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of payment_plans
@@ -477,10 +477,10 @@ CREATE TABLE `profile_comments`  (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `profileid` int(11) NOT NULL,
   `userid` int(11) NOT NULL,
-  `comment` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `comment` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `timestamp` int(11) NOT NULL,
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for reset_log
@@ -488,10 +488,10 @@ CREATE TABLE `profile_comments`  (
 DROP TABLE IF EXISTS `reset_log`;
 CREATE TABLE `reset_log`  (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `IP` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `IP` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   `timestamp` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for site_layouts
@@ -499,10 +499,10 @@ CREATE TABLE `reset_log`  (
 DROP TABLE IF EXISTS `site_layouts`;
 CREATE TABLE `site_layouts`  (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `layout_path` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `layout_path` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of site_layouts
@@ -515,54 +515,54 @@ INSERT INTO `site_layouts` VALUES (1, 'Flame', 'layout/themes/flame_layout.php')
 DROP TABLE IF EXISTS `site_settings`;
 CREATE TABLE `site_settings`  (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `site_name` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `site_desc` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `upload_path` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `upload_path_relative` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `site_email` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `site_logo` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT 'logo.png',
+  `site_name` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `site_desc` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `upload_path` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `upload_path_relative` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `site_email` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `site_logo` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'logo.png',
   `register` int(11) NOT NULL,
   `disable_captcha` int(11) NOT NULL,
-  `date_format` varchar(25) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `date_format` varchar(25) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `avatar_upload` int(11) NOT NULL DEFAULT 1,
-  `file_types` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `twitter_consumer_key` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `twitter_consumer_secret` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `file_types` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `twitter_consumer_key` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `twitter_consumer_secret` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `disable_social_login` int(11) NOT NULL,
-  `facebook_app_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `facebook_app_secret` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `google_client_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `google_client_secret` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `facebook_app_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `facebook_app_secret` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `google_client_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `google_client_secret` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `file_size` int(11) NOT NULL,
-  `paypal_email` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `paypal_currency` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT 'USD',
+  `paypal_email` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `paypal_currency` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'USD',
   `payment_enabled` int(11) NOT NULL,
-  `payment_symbol` varchar(5) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '$',
+  `payment_symbol` varchar(5) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '$',
   `global_premium` int(11) NOT NULL,
   `install` int(11) NOT NULL DEFAULT 1,
   `login_protect` int(11) NOT NULL,
   `activate_account` int(11) NOT NULL,
   `default_user_role` int(11) NOT NULL,
   `secure_login` int(11) NOT NULL,
-  `stripe_secret_key` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `stripe_publish_key` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `stripe_secret_key` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `stripe_publish_key` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `google_recaptcha` int(11) NOT NULL,
-  `google_recaptcha_secret` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `google_recaptcha_key` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `google_recaptcha_secret` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `google_recaptcha_key` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `logo_option` int(11) NOT NULL,
-  `layout` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `layout` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `profile_comments` int(11) NOT NULL,
   `avatar_width` int(11) NOT NULL,
   `avatar_height` int(11) NOT NULL,
   `cache_time` int(11) NOT NULL,
-  `checkout2_secret` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `checkout2_accountno` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `checkout2_secret` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `checkout2_accountno` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `currently_online` int(11) NOT NULL,
   `resize_avatar` int(11) NOT NULL,
   `cookie_option` int(11) NOT NULL,
-  `copyright_footer` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `copyright_footer` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of site_settings
@@ -577,9 +577,9 @@ CREATE TABLE `user_custom_fields`  (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `userid` int(11) NOT NULL,
   `fieldid` int(11) NOT NULL,
-  `value` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `value` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for user_data
@@ -588,13 +588,13 @@ DROP TABLE IF EXISTS `user_data`;
 CREATE TABLE `user_data`  (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `userid` int(11) NOT NULL,
-  `twitter` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `facebook` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `google` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `linkedin` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `website` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `twitter` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `facebook` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `google` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `linkedin` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `website` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for user_events
@@ -602,11 +602,11 @@ CREATE TABLE `user_data`  (
 DROP TABLE IF EXISTS `user_events`;
 CREATE TABLE `user_events`  (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `IP` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `event` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `IP` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `event` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   `timestamp` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for user_group_users
@@ -617,7 +617,18 @@ CREATE TABLE `user_group_users`  (
   `groupid` int(11) NOT NULL DEFAULT 0,
   `userid` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of user_group_users
+-- ----------------------------
+INSERT INTO `user_group_users` VALUES (1, 1, 4);
+INSERT INTO `user_group_users` VALUES (2, 1, 5);
+INSERT INTO `user_group_users` VALUES (3, 1, 1);
+INSERT INTO `user_group_users` VALUES (4, 1, 1);
+INSERT INTO `user_group_users` VALUES (5, 1, 2);
+INSERT INTO `user_group_users` VALUES (6, 1, 3);
+INSERT INTO `user_group_users` VALUES (7, 1, 4);
 
 -- ----------------------------
 -- Table structure for user_groups
@@ -625,10 +636,10 @@ CREATE TABLE `user_group_users`  (
 DROP TABLE IF EXISTS `user_groups`;
 CREATE TABLE `user_groups`  (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `name` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   `default` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of user_groups
@@ -643,11 +654,11 @@ CREATE TABLE `user_logs`  (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `userid` int(11) NOT NULL,
   `timestamp` int(11) NOT NULL,
-  `message` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `IP` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `user_agent` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `message` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `IP` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `user_agent` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for user_notifications
@@ -656,13 +667,13 @@ DROP TABLE IF EXISTS `user_notifications`;
 CREATE TABLE `user_notifications`  (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `userid` int(11) NOT NULL,
-  `url` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `url` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `timestamp` int(11) NOT NULL,
   `status` int(11) NOT NULL,
-  `message` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `message` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `fromid` int(11) NOT NULL,
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for user_role_permissions
@@ -670,12 +681,12 @@ CREATE TABLE `user_notifications`  (
 DROP TABLE IF EXISTS `user_role_permissions`;
 CREATE TABLE `user_role_permissions`  (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `description` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `classname` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `hook` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `description` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `classname` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `hook` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of user_role_permissions
@@ -692,14 +703,14 @@ INSERT INTO `user_role_permissions` VALUES (5, 'ctn_33', 'ctn_33', 'banned', 'ba
 DROP TABLE IF EXISTS `user_roles`;
 CREATE TABLE `user_roles`  (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   `admin` int(11) NOT NULL DEFAULT 0,
   `admin_settings` int(11) NOT NULL DEFAULT 0,
   `admin_members` int(11) NOT NULL DEFAULT 0,
   `admin_payment` int(11) NOT NULL DEFAULT 0,
   `banned` int(11) NOT NULL,
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of user_roles
@@ -717,10 +728,10 @@ INSERT INTO `user_roles` VALUES (6, 'Banned', 0, 0, 0, 0, 1);
 DROP TABLE IF EXISTS `user_secret_question`;
 CREATE TABLE `user_secret_question`  (
   `id` smallint(2) NOT NULL AUTO_INCREMENT,
-  `question` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `question` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `active` enum('0','1') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of user_secret_question
@@ -739,40 +750,40 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users`  (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `bnetId` int(10) NOT NULL,
-  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `password` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `token` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `IP` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `username` varchar(25) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `first_name` varchar(25) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `last_name` varchar(25) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `avatar` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT 'default.png',
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `password` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `token` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `IP` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `username` varchar(25) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `first_name` varchar(25) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `last_name` varchar(25) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `avatar` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'default.png',
   `joined` int(11) NOT NULL DEFAULT 0,
-  `joined_date` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `joined_date` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   `online_timestamp` int(11) NOT NULL DEFAULT 0,
-  `oauth_provider` varchar(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `oauth_id` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `oauth_token` varchar(1500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `oauth_secret` varchar(500) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `oauth_provider` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `oauth_id` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `oauth_token` varchar(1500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `oauth_secret` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   `email_notification` int(11) NOT NULL DEFAULT 1,
-  `aboutme` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `aboutme` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   `points` decimal(10, 2) NOT NULL DEFAULT 0,
   `premium_time` int(11) NOT NULL DEFAULT 0,
   `user_role` int(11) NOT NULL DEFAULT 0,
   `premium_planid` int(11) NOT NULL DEFAULT 0,
   `active` int(11) NOT NULL DEFAULT 1,
-  `activate_code` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `activate_code` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   `profile_comments` int(11) NOT NULL DEFAULT 1,
   `profile_views` int(11) NOT NULL DEFAULT 0,
-  `address_1` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `address_2` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `city` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `state` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `zipcode` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `address_1` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `address_2` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `city` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `state` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `zipcode` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   `country` int(11) NOT NULL,
   `noti_count` int(11) NOT NULL DEFAULT 0,
   `secret_question` smallint(2) NOT NULL,
-  `secret_answer` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `secret_answer` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `birthday` date NOT NULL,
   `offer` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`ID`) USING BTREE,
@@ -780,7 +791,7 @@ CREATE TABLE `users`  (
   INDEX `fk_country`(`country`) USING BTREE,
   CONSTRAINT `fk_country` FOREIGN KEY (`country`) REFERENCES `countries` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_secret_question` FOREIGN KEY (`secret_question`) REFERENCES `user_secret_question` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Procedure structure for sp_countries
@@ -790,6 +801,18 @@ delimiter ;;
 CREATE PROCEDURE `sp_countries`()
 BEGIN
 	select * from countries;
+END
+;;
+delimiter ;
+
+-- ----------------------------
+-- Procedure structure for sp_login_attempts
+-- ----------------------------
+DROP PROCEDURE IF EXISTS `sp_login_attempts`;
+delimiter ;;
+CREATE PROCEDURE `sp_login_attempts`(in ip_user VARCHAR(20), in username_user VARCHAR(50), in time_user VARCHAR(30))
+BEGIN
+	SELECT count(*) as count FROM `login_attempts` WHERE `IP` = ip_user AND `username` = username_user AND `timestamp` > time_user;
 END
 ;;
 delimiter ;

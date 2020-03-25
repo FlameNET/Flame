@@ -565,5 +565,5 @@ $lang['ctn_509'] = "";
 /**
  * Page Home
  */
-$lang['home_1'] = "Battle for azerroth season 4 begins";
+$lang['home_1'] = "Comienza la temporada 4 de Battle for Azeroth";
 ?>

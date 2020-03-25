@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | corresponding to the URL.
 |
 | Please see the user guide for complete details:
-|
+| 
 |	https://codeigniter.com/user_guide/general/routing.html
 |
 | -------------------------------------------------------------------------

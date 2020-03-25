@@ -404,8 +404,7 @@ class Account_Model extends CI_Model
 
     public function get_user_groups($userid)
     {
-        return $this->db->where("user_group_users.userid", $userid)->select("user_groups.name,user_groups.ID as groupid,
-				user_group_users.userid")->join("user_groups", "user_groups.ID = user_group_users.groupid")->get("user_group_users");
+        return $this->db->where("user_group_users.userid", $userid)->select("user_groups.name,user_groups.ID as groupid, user_group_users.userid")->join("user_groups", "user_groups.ID = user_group_users.groupid")->get("user_group_users");
     }
 
     public function check_user_in_group($userid, $groupid)
@@ -605,16 +604,16 @@ class Account_Model extends CI_Model
     /* Stored Procedure */
     public function get_countries()
     {
-        $dato = $this->db->query("CALL `sp_countries`()");
+        $query = $this->db->query("CALL `sp_countries`()");
         mysqli_next_result($this->db->conn_id);
-        return $dato;
+        return $query;
     }
 
     public function get_secret_question($active)
     {
-        $dato = $this->db->query("CALL sp_secret_question({$active})");
+        $query = $this->db->query("CALL sp_secret_question({$active})");
         mysqli_next_result($this->db->conn_id);
-        return $dato;
+        return $query;
     }
 
     public function register_auth_battlenet_accounts($data)
@@ -627,4 +626,134 @@ class Account_Model extends CI_Model
     {
         $this->auth->insert("account", $data);
     }
+
+
+    /**
+     * Website
+     */
+	public function getUserByEmail($email) 
+	{
+        if (mysqli_more_results($this->db->conn_id)) {
+            mysqli_next_result($this->db->conn_id);
+        }
+		return $this->db->select("ID,email,password,token,active,online_timestamp")->where("email", $email)->get("users");
+	}
+
+	public function getUserByUsername($username) 
+	{
+		return $this->db->select("ID,email,password,token,active,online_timestamp")->where("username", $username)->get("users");
+	}
+
+	public function updateUserToken($userid, $token) 
+	{
+		$this->db->where("ID", $userid)->update("users", array("token" => $token));
+	}
+
+	public function addToResetLog($ip) 
+	{
+		$this->db->insert("reset_log", 
+			array(
+				"IP" => $ip, 
+				"timestamp" => time()
+			)
+		);
+	}
+
+	public function getResetLog($ip) 
+	{
+		return $this->db->where("IP", $ip)->get("reset_log");
+	}
+
+	public function getUserEmail($email) 
+	{
+		return $this->db->where("email", $email)->select("ID, username")->get("users");
+	}
+
+	public function resetPW($userid, $token) 
+	{
+		$this->db->insert("password_reset", 
+			array(
+				"userid" => $userid, 
+				"token" => $token, 
+				"IP" => $_SERVER['REMOTE_ADDR'], 
+				"timestamp" => time()
+			)
+		);
+	}
+
+
+
+	public function getResetUser($token, $userid) 
+
+	{
+		return $this->db->where("token", $token)->where("userid", $userid)->get("password_reset");
+	}
+
+	public function updatePassword($userid, $password) 
+	{
+		$this->db->where("ID", $userid)->update("users", array("password" => $password));
+	}
+
+	public function deleteReset($token) 
+	{
+		$this->db->where("token", $token)->delete("password_reset");
+	}
+
+	public function get_oauth_user($provider, $oauth_id) 
+	{
+		return $this->db->where("oauth_provider", $provider)->where("oauth_id", $oauth_id)->get("users");
+	}
+
+	public function update_facebook_user($provider, $oauth_id, $token) 
+	{
+		$this->db->where("oauth_id", $oauth_id)
+		->where("oauth_provider", $provider)
+		->update("users", array(
+			"oauth_token" => $token,
+			"IP" => $_SERVER['REMOTE_ADDR']
+			)
+		);
+	}
+
+	public function update_google_user($provider, $oauth_id, $token) 
+	{
+		$this->db->where("oauth_id", $oauth_id)
+		->where("oauth_provider", $provider)
+		->update("users", array(
+			"oauth_token" => $token,
+			"IP" => $_SERVER['REMOTE_ADDR']
+			)
+		);
+	}
+
+	public function update_oauth_user($oauth_token, $oauth_secret, $oauth_id, $provider) 
+	{
+		$this->db->where("oauth_id", $oauth_id)
+		->where("oauth_provider", $provider)
+		->update("users", array(
+			"oauth_token" => $oauth_token,
+			"oauth_secret" => $oauth_secret,
+			"IP" => $_SERVER['REMOTE_ADDR']
+			)
+		);
+	}
+
+	public function get_login_attempts($ip, $username, $time) 
+    {
+        if (mysqli_more_results($this->db->conn_id)) {
+            mysqli_next_result($this->db->conn_id);
+        }
+        return $this->db->query("CALL `sp_login_attempts`('{$ip}', '{$username}', '{$time}');");
+    }
+
+    public function update_login_attempt($id, $data) 
+    {
+    	$this->db->where("ID", $id)->update("login_attempts", $data);
+    }
+
+    public function add_login_attempt($data) 
+    {
+    	$this->db->insert("login_attempts", $data);
+    }
+
 }

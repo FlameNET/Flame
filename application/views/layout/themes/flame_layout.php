@@ -1455,7 +1455,7 @@
                                             <div class="Navbar-modalContent">
                                                 <div class="Navbar-accountDropdownLoggedOut">
                                                     <div class="Navbar-modalSection">
-                                                        <a href="/login" class="Navbar-accountDropdownButtonLink" data-analytics="global-nav" data-analytics-placement="Nav - Account - Log In">
+                                                        <a href="<?php echo site_url('/account/login'); ?>" class="Navbar-accountDropdownButtonLink" data-analytics="global-nav" data-analytics-placement="Nav - Account - Log In">
                                                             <button class="Navbar-button is-full">Iniciar sesión</button>
                                                         </a>
                                                     </div>
@@ -1522,7 +1522,7 @@
                                             </a>
                                             <div class="Navbar-accountDropdownLoggedOut">
                                                 <div class="Navbar-modalSection">
-                                                    <a href="/login" class="Navbar-accountDropdownButtonLink" data-analytics="global-nav" data-analytics-placement="Nav - Account - Log In">
+                                                    <a href="<?php echo site_url('/account/login'); ?>" class="Navbar-accountDropdownButtonLink" data-analytics="global-nav" data-analytics-placement="Nav - Account - Log In">
                                                         <button class="Navbar-button is-full">Iniciar sesión</button>
                                                     </a>
                                                 </div>
@@ -1893,7 +1893,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="BnetNav-mobileSiteMenuListItem List-item"><a class="Link Link--block BnetNav-mobileSiteMenuLink" href="/es-es/wowclassic" data-analytics="main-nav" data-analytics-placement="WoW Classic"><span class="BnetNav-mobileSiteMenuLinkText text-upper" data-text="WoW Classic">WoW Classic</span></a></div>
-                                                        <div class="BnetNav-mobileSiteMenuListItem List-item"><a class="Link Link--block BnetNav-mobileSiteMenuLink" href="/es-es/login" data-analytics="main-nav" data-analytics-placement="Community - Log In"><span class="BnetNav-mobileSiteMenuLinkText text-upper" data-text="Iniciar sesión">Iniciar sesión</span></a></div>
+                                                        <div class="BnetNav-mobileSiteMenuListItem List-item"><a class="Link Link--block BnetNav-mobileSiteMenuLink" href="<?php echo site_url('/account/login'); ?>" data-analytics="main-nav" data-analytics-placement="Community - Log In"><span class="BnetNav-mobileSiteMenuLinkText text-upper" data-text="Iniciar sesión">Iniciar sesión</span></a></div>
                                                         <div class="space-normal"></div>
                                                         <div class="BnetNav-mobileSiteMenuListItem BnetNav-mobileSiteMenuListItem--user List-item align-center">
                                                             <div class="BnetNav-mobileSiteMenuListItemWrap"><a class="Link Link--block BnetNav-mobileSiteMenuLink BnetNav-mobileSiteMenuLink--signup" href="<?php echo site_url('/account/creation/tos.html'); ?>" data-analytics="account-creation-link" data-analytics-placement="Nav"><span class="BnetNav-mobileSiteMenuLinkText text-upper" data-text="Probar gratis">Probar gratis</span></a></div>
@@ -2132,7 +2132,7 @@
                                     <div class="SiteNav-sectionRight">
                                         <div class="SiteNav-menuList List">
                                             <div class="SiteNav-menuListItem SiteNav-menuListItem--search List-item"><a class="Link Link--block SiteNav-menuListLink SiteNav-searchLink hover-white color-gold-light" data-dropdown="SiteNav-dropdown-2" tabindex="0"><span class="Icon Icon--wow-search SiteNav-searchOpen"><svg class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false"><use xlink:href="/static/components/Icon/svg/wow-search.7c08692a91547c4e3849e39f7dee99f4.svg#wow-search"></use></svg></span><span class="Icon Icon--close SiteNav-searchClose"><svg class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false"><use xlink:href="/static/components/Icon/svg/close.a9ffd5f54f2a6c649636aab0e0392caa.svg#close"></use></svg></span></a></div>
-                                            <div class="SiteNav-menuListItem List-item"><a class="Link Link--block SiteNav-menuListLink text-upper" href="/es-es/login" data-analytics="main-nav" data-analytics-placement="Community - Log In"><span class="SiteNav-menuListLinkText" data-text="Iniciar sesión">Iniciar sesión</span></a></div>
+                                            <div class="SiteNav-menuListItem List-item"><a class="Link Link--block SiteNav-menuListLink text-upper" href="<?php echo site_url('/account/login'); ?>" data-analytics="main-nav" data-analytics-placement="Community - Log In"><span class="SiteNav-menuListLinkText" data-text="Iniciar sesión">Iniciar sesión</span></a></div>
                                             <div class="SiteNav-menuListItem SiteNav-menuListItem--user List-item">
                                                 <div class="SiteNav-menuListItemWrap"><a class="Link Link--block SiteNav-menuListLink text-upper" href="<?php echo site_url('/account/creation/tos.html'); ?>" data-analytics="account-creation-link" data-analytics-placement="Nav"><span class="SiteNav-menuListLinkText" data-text="Probar gratis">Probar gratis</span></a></div>
                                             </div>

@@ -79,6 +79,9 @@ class User
         }
         
         if ($this->u && $this->p && empty($this->oauth_provider)) {
+            if (mysqli_more_results($CI->db->conn_id)) {
+                mysqli_next_result($CI->db->conn_id);
+            }
             $user = $CI->db->select($select)->where("users.email", $this->u)->where("users.token", $this->p)->join("user_roles", "user_roles.ID = users.user_role", "left outer")->get("users");
         }
         

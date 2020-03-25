@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es-es" class="es-es us">
-
-<head xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<?php if($enable_rtl) : ?>
+<html dir="rtl">
+<?php else : ?>
+<html lang="es-ES">
+<?php endif; ?>
+<head>
     <meta name="viewport" content="width=device-width" />
-    <title><?php if(isset($page_title)) : ?><?php echo $page_title ?> - <?php endif; ?><?php echo $this->settings->info->site_name ?> | Cuenta de Blizzard</title>
+    <title><?php if(isset($page_title)) : ?><?php echo $page_title ?> - <?php endif; ?><?php echo $this->settings->info->site_name ?></title>         
+    <meta charset="UTF-8" />
     <link rel="shortcut icon" href="//bnetus-a.akamaihd.net/account/creation/static/images/meta/favicon.0gxnz.ico" />
     <script type="text/javascript">
         var BlzCookieConsent = {
@@ -306,7 +310,7 @@
                             "skipPrivacyPolicy": true,
                             "smsValidationPattern": "^[0-9]*$"
                         });
-                        creation.requestLoginCsrfToken("https://us.battle.net/login/csrf-token");
+                        creation.requestLoginCsrfToken("<?php echo site_url('/account/login'); ?>");
                         $("input, .row-secret-question", $("#account-creation")).add("#change-country").on("click", function() {
                             formInteracted = true;
                         });
