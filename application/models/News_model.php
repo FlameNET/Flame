@@ -1,5 +1,4 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /*
  * Copyright (C) 2020 FlameCMS <NOT YET>
@@ -18,26 +17,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-class IPN_Model extends CI_Model 
+Class News_Model extends CI_Model 
 {
-
-	public function log_ipn($ipn) 
-	{
-		$this->db->insert("ipn_log", array(
-			"data" => $ipn, 
-			"timestamp" => time(), 
-			"IP" => $_SERVER['REMOTE_ADDR']
-			)
-		);
-	}
-
-	public function add_payment($data) 
-	{
-		$this->db->insert("payment_logs", $data);
-	}
-
-	public function get_payment_log_hash($hash) 
-	{
-		return $this->db->where("hash", $hash)->get("payment_logs");
-	}
+    public function getNewsTop($id = 'NULL')
+    {
+        $query = $this->db->query("CALL `sp_news_top`({$id}, '{$_COOKIE['language']}');");
+        mysqli_next_result($this->db->conn_id);
+        return $query;
+    }
 }

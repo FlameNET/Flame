@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	'hostname' => '',
 	'username' => '',
 	'password' => '',
 	'database' => '',
@@ -97,7 +97,7 @@ $db['default'] = array(
 
 $db['auth'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	'hostname' => '',
 	'username' => '',
 	'password' => '',
 	'database' => '',
@@ -119,7 +119,7 @@ $db['auth'] = array(
 
 $db['characters'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	'hostname' => '',
 	'username' => '',
 	'password' => '',
 	'database' => '',
@@ -141,7 +141,7 @@ $db['characters'] = array(
 
 $db['world'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	'hostname' => '',
 	'username' => '',
 	'password' => '',
 	'database' => '',

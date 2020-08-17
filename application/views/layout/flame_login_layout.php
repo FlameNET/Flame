@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title><?php if(isset($page_title)) : ?><?php echo $page_title ?> - <?php endif; ?><?php echo $this->settings->info->site_name ?></title>         
     <meta charset="UTF-8" />
-    <link rel="shortcut icon" href="//bnetus-a.akamaihd.net/login/static/images/meta/favicon.0gxnz.ico" />
+    <link rel="shortcut icon" href="//bnetus-a.akamaihd.net/login/static/images/meta/favicon.ico" />
     <script nonce="yHLwp0zGQ3" type="text/javascript">
         var BlzCookieConsent = {
             host: 'battle.net',
@@ -17,21 +17,21 @@
             whitelistedCookies: ['']
         }
     </script>
-    <script type="text/javascript" src="//bnetus-a.akamaihd.net/login/static/js/gdpr/cookie-consent-filter-compat.29RI2.js?v=58-1"></script>
+    <script type="text/javascript" src="//bnetus-a.akamaihd.net/login/static/js/gdpr/cookie-consent-filter-compat.js"></script>
     <!--[if gt IE 8]><!-->
-    <link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/login/static/css/toolkit/blizzard-web.min.4SuhJ.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/login/static/css/toolkit/blizzard-web.min.css" />
     <!-- <![endif]-->
     <!--[if IE 8]><link rel="stylesheet" type="text/css" media="all" href="/login/static/css/toolkit/blizzard-web-ie8.min.css?v=58-1" /><![endif]-->
-    <link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/login/static/css/login/global.min.2jMuS.css?v=1" />
-    <link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/login/static/css/nav-client/nav-client.26C4w.css" />
-    <link rel="stylesheet" type="text/css" media="(max-width:800px)" href="//bnetus-a.akamaihd.net/login/static/css/nav-client/nav-client-responsive.2L8V6.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/login/static/css/login/global.min.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/login/static/css/nav-client/nav-client.css" />
+    <link rel="stylesheet" type="text/css" media="(max-width:800px)" href="//bnetus-a.akamaihd.net/login/static/css/nav-client/nav-client-responsive.css" />
     <!--[if IE 8]>
 	<link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/login/static/css/login/ie8.1GXdy.css" />
 	<![endif]-->
     <link rel="search" type="application/opensearchdescription+xml" href="https://us.battle.net/es-es/data/opensearch" title="Búsqueda en Blizzard" />
-    <script type="text/javascript" src="//bnetus-a.akamaihd.net/login/static/js/toolkit/third-party/jquery/jquery-1.11.0.min.1UgDG.js?v=58-1"></script>
-    <script type="text/javascript" src="//bnetus-a.akamaihd.net/login/static/js/toolkit/toolkit.min.3Crdu.js?v=58-1"></script>
-    <script type="text/javascript" src="//bnetus-a.akamaihd.net/login/static/js/core.min.26Ucq.js?v=58-1"></script>
+    <script type="text/javascript" src="//bnetus-a.akamaihd.net/login/static/js/toolkit/third-party/jquery/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//bnetus-a.akamaihd.net/login/static/js/toolkit/toolkit.min.js"></script>
+    <script type="text/javascript" src="//bnetus-a.akamaihd.net/login/static/js/core.min.js"></script>
     <meta name="viewport" content="width=device-width" />
     <!-- CODE INCLUDES -->
     <?php echo $cssincludes ?>
@@ -43,7 +43,7 @@
 </head>
 
 <body class="us es-es login-template web blizzard" data-embedded-state="STATE_LOGIN" data-baseUrl="<?php echo site_url('/account/login'); ?>" data-cdnUrl="http://media.blizzard.com" data-staticUrl="/login/static" data-sharedStaticUrl="/login/static/local-common" data-secureSupportUrl="https://us.battle.net/support/" data-project="login" data-projectUrl="/login" data-locale="es-es" data-language="es" data-region="us" data-loggedIn="false" data-userAgent="web" data-tagManagerAccount="GTM-589KTQ" data-gtmDataLayer="[{'userAgent':'web','analyticsRequestUri':'/login/es-es/','theme':'blizzard','errorCode':'','state':'STATE_LOGIN'}]" data-nonce="yHLwp0zGQ3" data-network-error-message="Por favor, comprueba tu conexión y vuelve a intentarlo.">
-    <script type="text/javascript" src="//bnetus-a.akamaihd.net/login/static/js/login/analytics.min.1HAsh.js?v=58-1"></script>
+    <script type="text/javascript" src="//bnetus-a.akamaihd.net/login/static/js/login/analytics.min.js"></script>
     <div class="grid-container wrapper">
         <?php echo $content; ?>
         <img src="//bnetus-a.akamaihd.net/login/static/images/toolkit/themes/bnet/icons/sprite-24-red.0PPlX.png" class="hide" />

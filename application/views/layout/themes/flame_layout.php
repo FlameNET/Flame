@@ -13,15 +13,15 @@
             onetrustScriptUrl: "https://cdn.cookielaw.org/langswitch/c25f2f14-8a44-40bb-a8b4-f09fd8647793.js"
         };
     </script>
-    <script src="https://assets.worldofwarcraft.com/static/scripts/cookie-consent.min.js?v8.0.1"></script>
+    <script src="https://assets.worldofwarcraft.com/static/scripts/cookie-consent.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="description" content="Únete a miles de héroes poderosos en Azeroth, un mundo de magia y aventuras sin fin." />
     <meta property="fb:app_id" content="175314325675" />
     <meta property="og:site_name" content="World of Warcraft" />
     <meta property="og:title" content="World of Warcraft" />
-    <meta property="og:image" content="http://bnetcmsus-a.akamaihd.net/cms/template_resource/fh/FHSCSCG9CXOC1462229977849.png" />
+    <meta property="og:image" content="<?php echo base_url('assets/images/og/image.png'); ?>" />
     <meta property="og:description" content="Únete a miles de héroes poderosos en Azeroth, un mundo de magia y aventuras sin fin." />
-    <meta property="og:url" content="https://worldofwarcraft.com/es-es/" />
+    <meta property="og:url" content="<?php echo site_url(); ?>" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@warcraft" />
     <script>
@@ -34,22 +34,6 @@
             "project": "wow",
             "authenticated": "0"
         });
-    </script>
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-5BZVX9');
     </script>
     <script type="text/javascript">
         window.NREUM || (NREUM = {}), __nr_require = function(t, e, n) {
@@ -1000,12 +984,13 @@
     </script>
     <link rel="search" href="/opensearch/opensearch.xml" title="Search World of Warcraft" type="application/opensearchdescription+xml">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link href="https://assets.worldofwarcraft.com/static/core.c2d168174ff6c27dbb32.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://assets.worldofwarcraft.com/static/styles/navbar.css?v8.0.1">
-    <link rel="stylesheet" href="https://assets.worldofwarcraft.com/static/styles/photoswipe.css?v8.0.1">
-    <link rel="stylesheet" href="https://assets.worldofwarcraft.com/static/styles/izimodal.css?v8.0.1">
-    <link rel="stylesheet" href="https://assets.worldofwarcraft.com/static/styles/simplebar.css?v8.0.1">
-    <link href="https://assets.worldofwarcraft.com/static/3.942f70423ea621fe3baa.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url('assets/css/core.css'); ?>" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/navbar.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/photoswipe.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/izimodal.css'); ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/simplebar.css'); ?>">
+    <link href="<?php echo base_url('assets/css/3.942f70423ea621fe3baa.css'); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url('assets/css/flame.css'); ?>">
     <script src="https://assets.worldofwarcraft.com/static/core.69b4058c60ed2bf03fa6.js"></script>
     <!-- CODE INCLUDES -->
     <?php echo $cssincludes; ?>
@@ -1018,6 +1003,7 @@
     var global_base_url = "<?php echo site_url('/') ?>";
     var global_hash = "<?php echo $this->security->get_csrf_hash() ?>";
     </script>
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js" integrity="sha384-3Nqiqht3ZZEO8FKj7GR1upiI385J92VwWNLj+FqHxtLYxd9l+WYpeqSOrLh0T12c" crossorigin="anonymous"></script>
 </head>
 
 <body class="es-es">
@@ -1027,7 +1013,7 @@
                 <div class="Sticky BnetNav-sticky" media-nav="is-disabled">
                     <div class="Sticky-content">
                         <div class="BnetNav-navbar">
-                            <div class="Navbar is-compact is-auto is-custom-logo" data-region="us" data-locale="es-es" data-hash="d0c6275ff3e7ff52f20344207160e1c4b2437836" data-service-type="l" data-service-host="https://navbar.blizzard.com" data-service-version="4.3.2" data-middleware-version="4.3.3" data-notification-url="/es-es/navbar/notifications.json" data-support-url="https://us.battle.net/support/update/json?callback=" data-current-site="games">
+                            <!-- <div class="Navbar is-compact is-auto is-custom-logo" data-region="us" data-locale="es-es" data-hash="d0c6275ff3e7ff52f20344207160e1c4b2437836" data-service-type="l" data-service-host="https://navbar.blizzard.com" data-service-version="4.3.2" data-middleware-version="4.3.3" data-notification-url="/es-es/navbar/notifications.json" data-support-url="https://us.battle.net/support/update/json?callback=" data-current-site="games">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" class="Navbar-embedded">
                                     <g id="Navbar-icon-new_window">
                                         <path d="M21.737,39.117c3.938-6.052,8.981-10.014,19.089-10.014v7.024L53.708,24.95   L40.826,13.77v6.72C26.135,20.489,21.737,32.97,21.737,39.117L21.737,39.117z" />
@@ -2096,7 +2082,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -2113,139 +2099,101 @@
                                     </a>
                                     <div class="SiteNav-sectionLeft">
                                         <div class="SiteNav-menuList List">
-                                            <div class="SiteNav-menuListItem List-item">
-                                                <a class="Link Link--block SiteNav-menuListLink" data-dropdown="SiteNav-dropdown-0" tabindex="0">
-                                                    <div class="DropdownLink DropdownLink--gold DropdownLink--goldWithHover text-upper"><span class="SiteNav-menuListLinkText" data-text="Juego">Juego</span><span class="SiteNav-dropdownIndicator DropdownLink-indicator"></span></div>
-                                                </a>
-                                            </div>
-                                            <div class="SiteNav-menuListItem List-item"><a class="Link Link--block SiteNav-menuListLink text-upper" href="/es-es/news" data-analytics="main-nav" data-analytics-placement="News"><span class="SiteNav-menuListLinkText" data-text="Noticias">Noticias</span></a></div>
-                                            <div class="SiteNav-menuListItem List-item"><a class="Link Link--block SiteNav-menuListLink text-upper" href="https://eu.forums.blizzard.com/es/wow/" data-analytics="main-nav" data-analytics-placement="Forums"><span class="SiteNav-menuListLinkText" data-text="Foros">Foros</span></a></div>
-                                            <div class="SiteNav-menuListItem List-item"><a class="Link Link--block SiteNav-menuListLink text-upper" href="https://eu.shop.battle.net/es-es/family/world-of-warcraft" data-analytics="shop-link" data-analytics-placement="Shop || Nav"><span class="SiteNav-menuListLinkText" data-text="Tienda">Tienda</span></a></div>
-                                            <div class="SiteNav-menuListItem List-item">
-                                                <a class="Link Link--block SiteNav-menuListLink" data-dropdown="SiteNav-dropdown-1" tabindex="0">
-                                                    <div class="DropdownLink DropdownLink--gold DropdownLink--goldWithHover text-upper"><span class="SiteNav-menuListLinkText" data-text="Esports">Esports</span><span class="SiteNav-dropdownIndicator DropdownLink-indicator"></span></div>
-                                                </a>
-                                            </div>
-                                            <div class="SiteNav-menuListItem List-item"><a class="Link Link--block SiteNav-menuListLink text-upper" href="/es-es/wowclassic" data-analytics="main-nav" data-analytics-placement="WoW Classic"><span class="SiteNav-menuListLinkText" data-text="WoW Classic">WoW Classic</span></a></div>
+                                            <?php foreach ($this->menu->getMenu()->result() as $value) { ?>
+                                                <?php if($value->submenu == 1) { ?>
+                                                <div class="SiteNav-menuListItem List-item">
+                                                    <a class="Link Link--block SiteNav-menuListLink" data-dropdown="SiteNav-dropdown-<?php echo $value->id; ?>" tabindex="0">
+                                                        <div class="DropdownLink DropdownLink--gold DropdownLink--goldWithHover text-upper">
+                                                            <span class="SiteNav-menuListLinkText" data-text="<?php echo $value->menu; ?>"><?php echo $value->menu; ?></span>
+                                                            <span class="SiteNav-dropdownIndicator DropdownLink-indicator"></span>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <?php } elseif($value->submenu == 0) { ?>
+                                                <div class="SiteNav-menuListItem List-item">
+                                                    <a class="Link Link--block SiteNav-menuListLink text-upper" href="<?php echo site_url($value->url); ?>">
+                                                        <span class="SiteNav-menuListLinkText"><?php echo $value->menu; ?></span>
+                                                    </a>
+                                                </div>
+                                                <?php }else{ echo 'Error Menu'; } ?>
+                                            <?php } ?>
                                         </div>
                                     </div>
                                     <div class="SiteNav-sectionRight">
                                         <div class="SiteNav-menuList List">
-                                            <div class="SiteNav-menuListItem SiteNav-menuListItem--search List-item"><a class="Link Link--block SiteNav-menuListLink SiteNav-searchLink hover-white color-gold-light" data-dropdown="SiteNav-dropdown-2" tabindex="0"><span class="Icon Icon--wow-search SiteNav-searchOpen"><svg class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false"><use xlink:href="/static/components/Icon/svg/wow-search.7c08692a91547c4e3849e39f7dee99f4.svg#wow-search"></use></svg></span><span class="Icon Icon--close SiteNav-searchClose"><svg class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false"><use xlink:href="/static/components/Icon/svg/close.a9ffd5f54f2a6c649636aab0e0392caa.svg#close"></use></svg></span></a></div>
+                                            <div class="SiteNav-menuListItem SiteNav-menuListItem--search List-item">
+                                                <a class="Link Link--block SiteNav-menuListLink SiteNav-searchLink hover-white color-gold-light" data-dropdown="SiteNav-dropdown-2" tabindex="0">
+                                                    <span class="Icon Icon--wow-search SiteNav-searchOpen">
+                                                        <img src="<?php echo base_url('assets/images/icon/Icon-search-gold.png'); ?>#wow-search" class="img-64">
+                                                    </span>
+                                                    <span class="Icon Icon--close SiteNav-searchClose">
+                                                        <i class="fas fa-times fa-2x"></i>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <?php if (!$this->user->loggedin) { ?>
                                             <div class="SiteNav-menuListItem List-item"><a class="Link Link--block SiteNav-menuListLink text-upper" href="<?php echo site_url('/account/login'); ?>" data-analytics="main-nav" data-analytics-placement="Community - Log In"><span class="SiteNav-menuListLinkText" data-text="Iniciar sesión">Iniciar sesión</span></a></div>
                                             <div class="SiteNav-menuListItem SiteNav-menuListItem--user List-item">
-                                                <div class="SiteNav-menuListItemWrap"><a class="Link Link--block SiteNav-menuListLink text-upper" href="<?php echo site_url('/account/creation/tos.html'); ?>" data-analytics="account-creation-link" data-analytics-placement="Nav"><span class="SiteNav-menuListLinkText" data-text="Probar gratis">Probar gratis</span></a></div>
+                                                <div class="SiteNav-menuListItemWrap"><a class="Link Link--block SiteNav-menuListLink text-upper" href="<?php echo site_url('/account/creation/tos.html'); ?>" data-analytics="account-creation-link" data-analytics-placement="Nav"><span class="SiteNav-menuListLinkText" data-text="Probar gratis">Registrarse</span></a></div>
                                             </div>
+
+                                            <?php }else if ($this->user->loggedin){ ?>
+                                                <div class="SiteNav-menuListItem SiteNav-menuListItem--user SiteNav-menuListItem--userLoggedIn List-item" data-test-id="2af60ccaec6851cdf2ba4f2108f0efd3">
+                                                    <div class="SiteNav-menuListItemWrap">
+                                                        <div class="List">
+                                                            <div class="List-item">
+                                                                <a class="Link Link--block" href="/es-es/">
+                                                                    <div class="Avatar Avatar--anon Avatar--goldLarge SiteNav-avatar"><div class="Avatar-image"></div></div>
+                                                                </a>
+                                                            </div>
+                                                            <div class="List-item">
+                                                                <a class="Link SiteNav-menuListLink" data-dropdown="SiteNav-user" queryselectoralways="25">
+                                                                    <div class="DropdownLink DropdownLink--gold DropdownLink--goldWithHover"><span class="SiteNav-menuListLinkText" data-text="<?php echo $this->user->info->username; ?>"><?php echo $this->user->info->username; ?></span><span class="SiteNav-dropdownIndicator DropdownLink-indicator"></span></div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            <?php
+                                            }else{
+                                                $this->template->error(lang("error_1"));
+                                            }
+                                            ?>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="Dropdown SiteNav-doormat" name="SiteNav-dropdown-0">
+                            <!-- Sub Menu -->
+                            <?php foreach ($this->menu->getSubMenuID()->result() as $value) { ?>
+                            <div class="Dropdown SiteNav-doormat" name="SiteNav-dropdown-<?php echo $value->id_menu; ?>">
                                 <div class="SiteNav-doormatContent">
                                     <div class="Grid Grid--gutters">
+                                        <?php foreach ($this->menu->getSubMenuCategory($value->id_menu)->result() as $category) { ?>
                                         <div class="Grid-1of5">
                                             <div class="List List--full List--vertical List--separator List--separatorBrownMedium">
                                                 <div class="List-item gutter-tiny gutter-vertical">
-                                                    <div class="SiteNav-sectionTitle font-title-tiny-onDark">Jugabilidad</div>
+                                                    <div class="SiteNav-sectionTitle font-title-tiny-onDark"><?php echo $category->category; ?></div>
                                                 </div>
                                                 <div class="List-item gutter-tiny gutter-vertical">
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--block SiteNav-pageLink" href="/es-es/game/races" type="CATEGORY_ITEM" data-analytics="main-nav" data-analytics-placement="Game - Gameplay - Races">Razas</a></div>
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--block SiteNav-pageLink" href="/es-es/game/classes" type="CATEGORY_ITEM" data-analytics="main-nav" data-analytics-placement="Game - Gameplay - Classes">Clases</a></div>
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--block SiteNav-pageLink" href="/es-es/game/talent-calculator" type="CATEGORY_ITEM" data-analytics="main-nav" data-analytics-placement="Game - Gameplay - Talent Calculator">Calculadora de talentos</a></div>
+                                                    <?php foreach ($this->menu->getSubMenu($category->id)->result() as $submenu) { ?>
+                                                    <div class="gutter-vertical gutter-tiny">
+                                                        <a class="Link Link--block SiteNav-pageLink" href="<?php echo site_url($submenu->url); ?>" type="CATEGORY_ITEM" data-analytics="main-nav" data-analytics-placement="Game - Gameplay - Talent Calculator">
+                                                            <?php echo $submenu->sub_menu; ?>
+                                                            <?php echo ($submenu->new_feature == 1) ? '<sup class="font-sup color-gold-medium">Nuevo</sup>' : ''; ?>
+                                                        </a>
+                                                    </div>
+                                                    <?php } ?>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="Grid-1of5">
-                                            <div class="List List--full List--vertical List--separator List--separatorBrownMedium">
-                                                <div class="List-item gutter-tiny gutter-vertical">
-                                                    <div class="SiteNav-sectionTitle font-title-tiny-onDark">Universo Warcraft</div>
-                                                </div>
-                                                <div class="List-item gutter-tiny gutter-vertical">
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--block SiteNav-pageLink" href="/es-es/story" type="CATEGORY_ITEM" data-analytics="main-nav" data-analytics-placement="Story - Lore - All">Todo</a></div>
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--block SiteNav-pageLink" href="/es-es/story#tab=video" type="CATEGORY_ITEM" data-analytics="main-nav" data-analytics-placement="Story - Lore - Animation">Vídeo</a></div>
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--block SiteNav-pageLink" href="/es-es/story#tab=audio" type="CATEGORY_ITEM" data-analytics="main-nav" data-analytics-placement="Story - Lore - Audio">Audio</a></div>
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--block SiteNav-pageLink" href="/es-es/story#tab=comics" type="CATEGORY_ITEM" data-analytics="main-nav" data-analytics-placement="Story - Lore - Comics">Cómics</a></div>
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--block SiteNav-pageLink" href="/es-es/story#tab=books" type="CATEGORY_ITEM" data-analytics="main-nav" data-analytics-placement="Story - Lore - Books">Novelas</a></div>
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--block SiteNav-pageLink" href="/es-es/story#tab=short-stories" type="CATEGORY_ITEM" data-analytics="main-nav" data-analytics-placement="Story - Lore - Short Stories">Relatos cortos</a></div>
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--block SiteNav-pageLink" href="/es-es/story#tab=characters" type="CATEGORY_ITEM" data-analytics="main-nav" data-analytics-placement="Story - Characters">Personajes</a></div>
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--block SiteNav-pageLink" href="/es-es/story/timeline" type="CATEGORY_ITEM" data-analytics="main-nav" data-analytics-placement="Story - Timeline">La historia de Warcraft</a></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="Grid-1of5">
-                                            <div class="List List--full List--vertical List--separator List--separatorBrownMedium">
-                                                <div class="List-item gutter-tiny gutter-vertical">
-                                                    <div class="SiteNav-sectionTitle font-title-tiny-onDark">Informaciones y Guías</div>
-                                                </div>
-                                                <div class="List-item gutter-tiny gutter-vertical">
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--block SiteNav-pageLink" href="/es-es/game/new-players-guide" type="CATEGORY_ITEM" data-analytics="main-nav" data-analytics-placement="Game - Guides - New Players">Guía para nuevos jugadores</a></div>
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--block SiteNav-pageLink" href="/es-es/game/returning-players-guide" type="CATEGORY_ITEM" data-analytics="main-nav" data-analytics-placement="Game - Guides - Returning Players">Guía para jugadores veteranos</a></div>
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--block SiteNav-pageLink" href="/es-es/game/status" type="CATEGORY_ITEM" data-analytics="main-nav" data-analytics-placement="Game - Guides - Realm Status">Estado de los reinos</a></div>
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--block SiteNav-pageLink" href="/es-es/game/recruit-a-friend" type="CATEGORY_ITEM" data-analytics="main-nav" data-analytics-placement="Game - Guides - Recruit A Friend">Recluta a un amigo</a></div>
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--external Link--block SiteNav-pageLink" href="https://worldofwarcraft.com/search/blog?k=wow" type="CATEGORY_ITEM" data-analytics="main-nav" data-analytics-placement="Game - Guides - Content Update Notes">Notas de la actualización de contenido<sup class="font-sup color-gold-medium">Nuevo</sup></a></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="Grid-1of5">
-                                            <div class="List List--full List--vertical List--separator List--separatorBrownMedium">
-                                                <div class="List-item gutter-tiny gutter-vertical">
-                                                    <div class="SiteNav-sectionTitle font-title-tiny-onDark">Competitivo</div>
-                                                </div>
-                                                <div class="List-item gutter-tiny gutter-vertical">
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--block SiteNav-pageLink" href="/es-es/game/hall-of-fame/mythic-raid" type="CATEGORY_ITEM" data-analytics="main-nav" data-analytics-placement="Juego - Jugabilidad - Salón de la fama de bandas míticas">Salón de la fama de bandas míticas</a></div>
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--block SiteNav-pageLink" href="/es-es/game/pve/leaderboards" type="CATEGORY_ITEM" data-analytics="main-nav" data-analytics-placement="Game - Gameplay - Mythic Leaderboards">Clasificación de mazmorras de piedra angular mítica</a></div>
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--block SiteNav-pageLink" href="/es-es/game/pvp/leaderboards/3v3" type="CATEGORY_ITEM" data-analytics="main-nav" data-analytics-placement="Game - Gameplay - Leaderboards">Clasificaciones JcJ</a></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="Grid-1of5">
-                                            <div class="List List--full List--vertical List--separator List--separatorBrownMedium">
-                                                <div class="List-item gutter-tiny gutter-vertical">
-                                                    <div class="SiteNav-sectionTitle font-title-tiny-onDark">Expansiones</div>
-                                                </div>
-                                                <div class="List-item gutter-tiny gutter-vertical">
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--block SiteNav-pageLink" href="/es-es/shadowlands" type="CATEGORY_ITEM" data-analytics="Game - Expansions - Shadowlands" data-analytics-placement="main-nav">Shadowlands<sup class="font-sup color-gold-medium">Nuevo</sup></a></div>
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--block SiteNav-pageLink" href="/es-es/battle-for-azeroth" type="CATEGORY_ITEM" data-analytics="Game - Expansions - Battle for Azeroth" data-analytics-placement="main-nav">Battle for Azeroth</a></div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             </div>
-                            <div class="Dropdown SiteNav-doormat" name="SiteNav-dropdown-1">
-                                <div class="SiteNav-doormatContent">
-                                    <div class="Grid Grid--gutters">
-                                        <div class="Grid-1of4">
-                                            <div class="List List--full List--vertical List--separator List--separatorBrownMedium">
-                                                <div class="List-item gutter-tiny gutter-vertical">
-                                                    <div class="SiteNav-sectionTitle font-title-tiny-onDark">Arena World Championship</div>
-                                                </div>
-                                                <div class="List-item gutter-tiny gutter-vertical">
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--block SiteNav-pageLink" href="/es-es/esports/arena" type="CATEGORY_ITEM" data-analytics="main-nav" data-analytics-placement="Esports - Arena - Introduction">Introducción</a></div>
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--block SiteNav-pageLink" href="/es-es/esports/arena#schedule" type="CATEGORY_ITEM" data-analytics="main-nav" data-analytics-placement="Esports - Arena - Standings and Schedule">Clasificación y calendario</a></div>
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--block SiteNav-pageLink" href="/es-es/esports/arena#news" type="CATEGORY_ITEM" data-analytics="main-nav" data-analytics-placement="Esports - Arena - News">Noticias</a></div>
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--block SiteNav-pageLink" href="/es-es/esports/arena#archive" type="CATEGORY_ITEM" data-analytics="main-nav" data-analytics-placement="Esports - Arena - Season Archive">Archivo de la temporada</a></div>
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--block SiteNav-pageLink" href="/es-es/esports/arena#hof" type="CATEGORY_ITEM" data-analytics="main-nav" data-analytics-placement="Esports - Arena - Hall of Fame">Salón de la fama</a></div>
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--block SiteNav-pageLink" href="/es-es/esports/arena#rules" type="CATEGORY_ITEM" data-analytics="main-nav" data-analytics-placement="Esports - Arena - Inside the World Championship">World Championship: entre bambalinas</a></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="Grid-1of4">
-                                            <div class="List List--full List--vertical List--separator List--separatorBrownMedium">
-                                                <div class="List-item gutter-tiny gutter-vertical">
-                                                    <div class="SiteNav-sectionTitle font-title-tiny-onDark">Mythic Dungeon International</div>
-                                                </div>
-                                                <div class="List-item gutter-tiny gutter-vertical">
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--block SiteNav-pageLink" href="/es-es/esports/mythic" type="CATEGORY_ITEM" data-analytics="main-nav" data-analytics-placement="Esports - Mythic - Introduction">Introducción</a></div>
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--block SiteNav-pageLink" href="/es-es/esports/mythic#schedule" type="CATEGORY_ITEM" data-analytics="main-nav" data-analytics-placement="Esports - Mythic - Schedule">Calendario</a></div>
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--block SiteNav-pageLink" href="/es-es/esports/mythic#news" type="CATEGORY_ITEM" data-analytics="main-nav" data-analytics-placement="Esports - Mythic - News">Noticias</a></div>
-                                                    <div class="gutter-vertical gutter-tiny"><a class="Link Link--block SiteNav-pageLink" href="/es-es/esports/mythic#rules" type="CATEGORY_ITEM" data-analytics="main-nav" data-analytics-placement="Esports - Mythic - Inside the Mythic Dungeon Invitational">Mythic Dungeon International: entre bastidores</a></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php }?>
+                            <!-- Sub Menu / END -->
+                            <!-- Search -->
                             <div class="Dropdown SiteNav-doormat SiteNav-searchDropdown" name="SiteNav-dropdown-2">
                                 <div class="SiteNav-doormatContent">
                                     <form class="SiteNav-searchBox" action="/search" method="GET"><span class="Icon Icon--searchGold SiteNav-searchIcon"></span>
@@ -2302,221 +2250,252 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div><span class="SkipLink-target" id="skip-link-target" aria-landmark="main"></span>
-            <?php echo $content; ?>
-            <div class="Divider"></div>
-            <div class="Pane Pane--dirtLight Pane--bgBottom bordered">
-                <div class="Pane-bg">
-                    <div class="Pane-overlay"></div>
-                </div>
-                <div class="Pane-content">
-                    <div class="gutter-normal gutter-vertical">
-                        <div class="SocialLinks SocialLinks--wow">
-                            <div class="SocialLinks-title">Seguir a Warcraft</div>
-                            <div class="SocialLinks-links"><a class="Link SocialLinks-link" href="https://www.facebook.com/WorldofWarcraft.es" data-analytics="sns-refer" data-analytics-placement="Footer - facebook"><span class="Icon Icon--social-facebook Icon--medium SocialLinks-icon"><svg class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false"><use xlink:href="/static/components/Icon/svg/social-facebook.20d2ed4f5a690fe838af4c2beb4ba8be.svg#social-facebook"></use></svg></span></a><a class="Link SocialLinks-link" href="https://twitter.com/warcraft_Es" data-analytics="sns-refer" data-analytics-placement="Footer - twitter"><span class="Icon Icon--social-twitter Icon--medium SocialLinks-icon"><svg class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false"><use xlink:href="/static/components/Icon/svg/social-twitter.fe8ef9d809c5b5099e326f60b39ff940.svg#social-twitter"></use></svg></span></a><a class="Link SocialLinks-link" href="https://www.youtube.com/user/WorldofWarcraftES" data-analytics="sns-refer" data-analytics-placement="Footer - youtube"><span class="Icon Icon--social-youtube Icon--medium SocialLinks-icon"><svg class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false"><use xlink:href="/static/components/Icon/svg/social-youtube.f56a46d1a6cc2ffd841bc4a8d1de3d3d.svg#social-youtube"></use></svg></span></a><a class="Link SocialLinks-link" href="https://www.reddit.com/r/wow" data-analytics="sns-refer" data-analytics-placement="Footer - reddit"><span class="Icon Icon--social-reddit Icon--medium SocialLinks-icon"><svg class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false"><use xlink:href="/static/components/Icon/svg/social-reddit.c70b106f4cf581aae6b314f337d07921.svg#social-reddit"></use></svg></span></a><a class="Link SocialLinks-link" href="https://www.instagram.com/warcraft" data-analytics="sns-refer" data-analytics-placement="Footer - instagram"><span class="Icon Icon--social-instagram Icon--medium SocialLinks-icon"><svg class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false"><use xlink:href="/static/components/Icon/svg/social-instagram.d8f4f26719bf05eaaa420654df619d00.svg#social-instagram"></use></svg></span></a></div>
+                            <!-- Search / END -->
+                            <!-- Characters -->
+                            <div class="Dropdown SiteNav-doormat SiteNav-characterDropdown" name="SiteNav-user" queryselectoralways="18">
+                                <div class="SiteNav-doormatContent">
+                                    <div class="List List--vertical List--right">
+                                        <div class="List-item">
+                                            <a class="SiteNav-pageLink" href="<?php echo site_url("login/logout/" . $this->security->get_csrf_hash()) ?>" data-analytics="main-nav" data-analytics-placement="Community - Log Out" data-default-tabindex="0" tabindex="-1">Cerrar sesión</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Characters / END -->
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="Pane Pane--dirtDark Pane--above">
-                <div class="Pane-bg">
-                    <div class="Pane-overlay"></div>
-                </div>
-                <div class="Pane-content">
-                    <div class="SiteFooter">
-                        <div class="NavbarFooter is-regionless" data-hash="d0c6275ff3e7ff52f20344207160e1c4b2437836" data-region-selection="none" data-region="us" data-country="CR" data-geoip-service-url="https://geo.battle.net" data-locale="es-es">
-                            <div class="NavbarFooter-overlay"></div>
-                            <div class="NavbarFooter-selector">
-                                <div class="NavbarFooter-selectorToggle">
-                                    <div class="NavbarFooter-icon NavbarFooter-selectorToggleIcon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
-                                            <use xlink:href="#Navbar-icon-globe"></use>
-                                        </svg>
-                                    </div>
-                                    <div class="NavbarFooter-selectorToggleLabel">Español (EU)</div>
-                                    <div class="NavbarFooter-icon NavbarFooter-selectorToggleArrow">
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
-                                            <use xlink:href="#Navbar-icon-selector"></use>
-                                        </svg>
-                                    </div>
+            <span class="SkipLink-target" id="skip-link-target" aria-landmark="main"></span>
+            <?php echo $content; ?>
+            <footer id="footer">
+                <div class="Divider"></div>
+                <div class="Pane Pane--dirtLight Pane--bgBottom bordered">
+                    <div class="Pane-bg">
+                        <div class="Pane-overlay"></div>
+                    </div>
+                    <div class="Pane-content">
+                        <div class="gutter-normal gutter-vertical">
+                            <div class="SocialLinks SocialLinks--wow">
+                                <div class="SocialLinks-title">Seguir a Warcraft</div>
+                                <div class="SocialLinks-links">
+                                    <a class="Link SocialLinks-link" href="https://www.facebook.com/WorldofWarcraft.es" data-analytics="sns-refer" data-analytics-placement="Footer - facebook">
+                                        <span class="Icon Icon--social-facebook Icon--medium SocialLinks-icon">
+                                            <i class="fab fa-facebook-f Icon-svg"></i>
+                                        </span>
+                                    </a>
+                                    <a class="Link SocialLinks-link" href="https://twitter.com/warcraft_Es" data-analytics="sns-refer" data-analytics-placement="Footer - twitter">
+                                        <span class="Icon Icon--social-twitter Icon--medium SocialLinks-icon">
+                                            <i class="fab fa-twitter Icon-svg"></i>
+                                        </span>
+                                    </a>
+                                    <a class="Link SocialLinks-link" href="https://www.youtube.com/user/WorldofWarcraftES" data-analytics="sns-refer" data-analytics-placement="Footer - youtube">
+                                        <span class="Icon Icon--social-youtube Icon--medium SocialLinks-icon">
+                                            <i class="fab fa-youtube Icon-svg"></i>
+                                        </span>
+                                    </a>
+                                    <a class="Link SocialLinks-link" href="https://www.reddit.com/r/wow" data-analytics="sns-refer" data-analytics-placement="Footer - reddit">
+                                        <span class="Icon Icon--social-reddit Icon--medium SocialLinks-icon">
+                                            <i class="fab fa-reddit-alien Icon-svg"></i>
+                                        </span>
+                                    </a>
+                                    <a class="Link SocialLinks-link" href="https://www.instagram.com/warcraft" data-analytics="sns-refer" data-analytics-placement="Footer - instagram">
+                                        <span class="Icon Icon--social-instagram Icon--medium SocialLinks-icon">
+                                            <i class="fab fa-instagram Icon-svg"></i>
+                                        </span>
+                                    </a>
                                 </div>
-                                <div class="NavbarFooter-selectorDropdown">
-                                    <div class="NavbarFooter-selectorDropdownContainer">
-                                        <div class="NavbarFooter-selectorCloser">
-                                            <div class="NavbarFooter-selectorCloserAnchor">
-                                                <div class="NavbarFooter-icon">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
-                                                        <use xlink:href="#Navbar-icon-close"></use>
-                                                    </svg>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Pane Pane--dirtDark Pane--above">
+                    <div class="Pane-bg">
+                        <div class="Pane-overlay"></div>
+                    </div>
+                    <div class="Pane-content">
+                        <div class="SiteFooter">
+                            <div class="NavbarFooter is-regionless" data-hash="d0c6275ff3e7ff52f20344207160e1c4b2437836" data-region-selection="none" data-region="us" data-country="CR" data-geoip-service-url="https://geo.battle.net" data-locale="es-es">
+                                <div class="NavbarFooter-overlay"></div>
+                                <div class="NavbarFooter-selector">
+                                    <div class="NavbarFooter-selectorToggle">
+                                        <div class="NavbarFooter-icon NavbarFooter-selectorToggleIcon">
+                                            <i class="fas fa-globe-americas"></i>
+                                        </div>
+                                        <div class="NavbarFooter-selectorToggleLabel">Español (EU)</div>
+                                        <div class="NavbarFooter-icon NavbarFooter-selectorToggleArrow">
+                                            <i class="fas fa-chevron-up"></i>
+                                        </div>
+                                    </div>
+                                    <div class="NavbarFooter-selectorDropdown">
+                                        <div class="NavbarFooter-selectorDropdownContainer">
+                                            <div class="NavbarFooter-selectorCloser">
+                                                <div class="NavbarFooter-selectorCloserAnchor">
+                                                    <div class="NavbarFooter-icon">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
+                                                            <use xlink:href="#Navbar-icon-close"></use>
+                                                        </svg>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="NavbarFooter-selectorLocales NavbarFooter-selectorSection">
-                                            <div class="NavbarFooter-selectorSectionBlock">
-                                                <a class="NavbarFooter-selectorLocale NavbarFooter-selectorOption" href="/de-de/" data-id="de-de">
-                                                    <div class="NavbarFooter-selectorOptionLabel">Deutsch</div>
-                                                    <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
-                                                            <use xlink:href="#Navbar-icon-check"></use>
-                                                        </svg>
-                                                    </div>
-                                                </a>
-                                                <a class="NavbarFooter-selectorLocale NavbarFooter-selectorOption" href="/en-us/" data-id="en-us">
-                                                    <div class="NavbarFooter-selectorOptionLabel">English (US)</div>
-                                                    <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
-                                                            <use xlink:href="#Navbar-icon-check"></use>
-                                                        </svg>
-                                                    </div>
-                                                </a>
-                                                <a class="NavbarFooter-selectorLocale NavbarFooter-selectorOption" href="/en-gb/" data-id="en-gb">
-                                                    <div class="NavbarFooter-selectorOptionLabel">English (EU)</div>
-                                                    <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
-                                                            <use xlink:href="#Navbar-icon-check"></use>
-                                                        </svg>
-                                                    </div>
-                                                </a>
-                                                <a class="NavbarFooter-selectorLocale is-active is-selected NavbarFooter-selectorOption" href="/es-es/" data-id="es-es">
-                                                    <div class="NavbarFooter-selectorOptionLabel">Español (EU)</div>
-                                                    <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
-                                                            <use xlink:href="#Navbar-icon-check"></use>
-                                                        </svg>
-                                                    </div>
-                                                </a>
-                                                <a class="NavbarFooter-selectorLocale NavbarFooter-selectorOption" href="/es-mx/" data-id="es-mx">
-                                                    <div class="NavbarFooter-selectorOptionLabel">Español (AL)</div>
-                                                    <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
-                                                            <use xlink:href="#Navbar-icon-check"></use>
-                                                        </svg>
-                                                    </div>
-                                                </a>
-                                                <a class="NavbarFooter-selectorLocale NavbarFooter-selectorOption" href="/fr-fr/" data-id="fr-fr">
-                                                    <div class="NavbarFooter-selectorOptionLabel">Français</div>
-                                                    <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
-                                                            <use xlink:href="#Navbar-icon-check"></use>
-                                                        </svg>
-                                                    </div>
-                                                </a>
-                                                <a class="NavbarFooter-selectorLocale NavbarFooter-selectorOption" href="/it-it/" data-id="it-it">
-                                                    <div class="NavbarFooter-selectorOptionLabel">Italiano</div>
-                                                    <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
-                                                            <use xlink:href="#Navbar-icon-check"></use>
-                                                        </svg>
-                                                    </div>
-                                                </a>
+                                            <div class="NavbarFooter-selectorLocales NavbarFooter-selectorSection">
+                                                <div class="NavbarFooter-selectorSectionBlock">
+                                                    <a class="NavbarFooter-selectorLocale NavbarFooter-selectorOption" href="/de-de/" data-id="de-de">
+                                                        <div class="NavbarFooter-selectorOptionLabel">Deutsch</div>
+                                                        <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
+                                                            <i class="fas fa-check"></i>
+                                                        </div>
+                                                    </a>
+                                                    <a class="NavbarFooter-selectorLocale NavbarFooter-selectorOption" href="/en-us/" data-id="en-us">
+                                                        <div class="NavbarFooter-selectorOptionLabel">English (US)</div>
+                                                        <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
+                                                                <use xlink:href="#Navbar-icon-check"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </a>
+                                                    <a class="NavbarFooter-selectorLocale NavbarFooter-selectorOption" href="/en-gb/" data-id="en-gb">
+                                                        <div class="NavbarFooter-selectorOptionLabel">English (EU)</div>
+                                                        <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
+                                                                <use xlink:href="#Navbar-icon-check"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </a>
+                                                    <a class="NavbarFooter-selectorLocale is-active is-selected NavbarFooter-selectorOption" href="/es-es/" data-id="es-es">
+                                                        <div class="NavbarFooter-selectorOptionLabel">Español (EU)</div>
+                                                        <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
+                                                                <use xlink:href="#Navbar-icon-check"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </a>
+                                                    <a class="NavbarFooter-selectorLocale NavbarFooter-selectorOption" href="/es-mx/" data-id="es-mx">
+                                                        <div class="NavbarFooter-selectorOptionLabel">Español (AL)</div>
+                                                        <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
+                                                                <use xlink:href="#Navbar-icon-check"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </a>
+                                                    <a class="NavbarFooter-selectorLocale NavbarFooter-selectorOption" href="/fr-fr/" data-id="fr-fr">
+                                                        <div class="NavbarFooter-selectorOptionLabel">Français</div>
+                                                        <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
+                                                                <use xlink:href="#Navbar-icon-check"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </a>
+                                                    <a class="NavbarFooter-selectorLocale NavbarFooter-selectorOption" href="/it-it/" data-id="it-it">
+                                                        <div class="NavbarFooter-selectorOptionLabel">Italiano</div>
+                                                        <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
+                                                                <use xlink:href="#Navbar-icon-check"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="NavbarFooter-selectorSectionBlock">
+                                                    <a class="NavbarFooter-selectorLocale NavbarFooter-selectorOption" href="/pt-br/" data-id="pt-br">
+                                                        <div class="NavbarFooter-selectorOptionLabel">Português (AL)</div>
+                                                        <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
+                                                                <use xlink:href="#Navbar-icon-check"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </a>
+                                                    <a class="NavbarFooter-selectorLocale NavbarFooter-selectorOption" href="/pt-pt/" data-id="pt-pt">
+                                                        <div class="NavbarFooter-selectorOptionLabel">Português (EU)</div>
+                                                        <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
+                                                                <use xlink:href="#Navbar-icon-check"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </a>
+                                                    <a class="NavbarFooter-selectorLocale NavbarFooter-selectorOption" href="/ru-ru/" data-id="ru-ru">
+                                                        <div class="NavbarFooter-selectorOptionLabel">Русский</div>
+                                                        <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
+                                                                <use xlink:href="#Navbar-icon-check"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </a>
+                                                    <a class="NavbarFooter-selectorLocale NavbarFooter-selectorOption" href="/ko-kr/" data-id="ko-kr">
+                                                        <div class="NavbarFooter-selectorOptionLabel">한국어</div>
+                                                        <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
+                                                                <use xlink:href="#Navbar-icon-check"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </a>
+                                                    <a class="NavbarFooter-selectorLocale NavbarFooter-selectorOption" href="/zh-tw/" data-id="zh-tw">
+                                                        <div class="NavbarFooter-selectorOptionLabel">繁體中文</div>
+                                                        <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
+                                                                <use xlink:href="#Navbar-icon-check"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </a>
+                                                    <a class="NavbarFooter-selectorLocale is-external NavbarFooter-selectorOption" href="https://www.wowchina.com/zh-cn/" data-id="zh-cn">
+                                                        <div class="NavbarFooter-selectorOptionLabel">简体中文</div>
+                                                        <div class="NavbarFooter-selectorOptionIcon NavbarFooter-icon">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
+                                                                <use xlink:href="#Navbar-icon-external"></use>
+                                                            </svg>
+                                                        </div>
+                                                        <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
+                                                                <use xlink:href="#Navbar-icon-check"></use>
+                                                            </svg>
+                                                        </div>
+                                                    </a>
+                                                </div>
                                             </div>
-                                            <div class="NavbarFooter-selectorSectionBlock">
-                                                <a class="NavbarFooter-selectorLocale NavbarFooter-selectorOption" href="/pt-br/" data-id="pt-br">
-                                                    <div class="NavbarFooter-selectorOptionLabel">Português (AL)</div>
-                                                    <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
-                                                            <use xlink:href="#Navbar-icon-check"></use>
-                                                        </svg>
-                                                    </div>
-                                                </a>
-                                                <a class="NavbarFooter-selectorLocale NavbarFooter-selectorOption" href="/pt-pt/" data-id="pt-pt">
-                                                    <div class="NavbarFooter-selectorOptionLabel">Português (EU)</div>
-                                                    <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
-                                                            <use xlink:href="#Navbar-icon-check"></use>
-                                                        </svg>
-                                                    </div>
-                                                </a>
-                                                <a class="NavbarFooter-selectorLocale NavbarFooter-selectorOption" href="/ru-ru/" data-id="ru-ru">
-                                                    <div class="NavbarFooter-selectorOptionLabel">Русский</div>
-                                                    <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
-                                                            <use xlink:href="#Navbar-icon-check"></use>
-                                                        </svg>
-                                                    </div>
-                                                </a>
-                                                <a class="NavbarFooter-selectorLocale NavbarFooter-selectorOption" href="/ko-kr/" data-id="ko-kr">
-                                                    <div class="NavbarFooter-selectorOptionLabel">한국어</div>
-                                                    <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
-                                                            <use xlink:href="#Navbar-icon-check"></use>
-                                                        </svg>
-                                                    </div>
-                                                </a>
-                                                <a class="NavbarFooter-selectorLocale NavbarFooter-selectorOption" href="/zh-tw/" data-id="zh-tw">
-                                                    <div class="NavbarFooter-selectorOptionLabel">繁體中文</div>
-                                                    <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
-                                                            <use xlink:href="#Navbar-icon-check"></use>
-                                                        </svg>
-                                                    </div>
-                                                </a>
-                                                <a class="NavbarFooter-selectorLocale is-external NavbarFooter-selectorOption" href="https://www.wowchina.com/zh-cn/" data-id="zh-cn">
-                                                    <div class="NavbarFooter-selectorOptionLabel">简体中文</div>
-                                                    <div class="NavbarFooter-selectorOptionIcon NavbarFooter-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
-                                                            <use xlink:href="#Navbar-icon-external"></use>
-                                                        </svg>
-                                                    </div>
-                                                    <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
-                                                            <use xlink:href="#Navbar-icon-check"></use>
-                                                        </svg>
-                                                    </div>
-                                                </a>
-                                            </div>
+                                            <div class="NavbarFooter-selectorTick"></div>
                                         </div>
-                                        <div class="NavbarFooter-selectorTick"></div>
                                     </div>
                                 </div>
-                            </div>
-                            <style>
-                                .NavbarFooter-doNotSell {
-                                    display: none;
-                                }
-                                
-                                .NavbarFooter[data-country="US"][data-administrative-division="CA"] > .NavbarFooter-doNotSell {
-                                    display: block;
-                                }
-                            </style>
-                            <div class="NavbarFooter-logoContainer">
-                                <a href="https://www.blizzard.com/" class="NavbarFooter-logo">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 124 66" class="NavbarFooter-logoUpper">
-                                        <use xlink:href="#NavbarFooter-blizzard-upper"></use>
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 124 66" class="NavbarFooter-logoLower">
-                                        <use xlink:href="#NavbarFooter-blizzard-lower"></use>
-                                    </svg>
-                                </a>
-                            </div>
-                            <div class="NavbarFooter-links NavbarFooter-mainLinks">
-                                <div class="NavbarFooter-linksLeft">
-                                    <div class="NavbarFooter-link NavbarFooter-mainLink"><a href="https://careers.blizzard.com/" class="NavbarFooter-anchor" data-id="careers" data-analytics="global-nav" data-analytics-placement="Footer - Careers">Empleos</a></div>
-                                    <div class="NavbarFooter-link NavbarFooter-mainLink"><a href="https://www.blizzard.com/company/about/" class="NavbarFooter-anchor" data-id="about" data-analytics="global-nav" data-analytics-placement="Footer - About">Información</a></div>
-                                    <div class="NavbarFooter-link NavbarFooter-mainLink"><a href="https://support.blizzard.com/" class="NavbarFooter-anchor" data-id="support" data-analytics="global-nav" data-analytics-placement="Footer - Support">Asistencia</a></div>
+                                <style>
+                                    .NavbarFooter-doNotSell {
+                                        display: none;
+                                    }
+                                    
+                                    .NavbarFooter[data-country="US"][data-administrative-division="CA"] > .NavbarFooter-doNotSell {
+                                        display: block;
+                                    }
+                                </style>
+                                <div class="NavbarFooter-logoContainer">
+                                    <a href="https://www.blizzard.com/" class="NavbarFooter-logo">
+                                        <img src="<?php echo base_url('assets/images/logos/Logo-blizzard.png'); ?>" alt="" class="NavbarFooter-logoUpper">
+                                    </a>
                                 </div>
-                                <div class="NavbarFooter-linksRight">
-                                    <div class="NavbarFooter-link NavbarFooter-mainLink"><a href="http://us.blizzard.com/company/about/contact.html" class="NavbarFooter-anchor" data-id="contact" data-analytics="global-nav">Contacto</a></div>
-                                    <div class="NavbarFooter-link NavbarFooter-mainLink"><a href="https://blizzard.gamespress.com/" class="NavbarFooter-anchor" data-id="press" data-analytics="global-nav" data-analytics-placement="Footer - Press">Prensa</a></div>
-                                    <div class="NavbarFooter-link NavbarFooter-mainLink"><a href="https://develop.battle.net/" class="NavbarFooter-anchor" data-id="api" data-analytics="global-nav" data-analytics-placement="Footer - Battle.net API">API</a></div>
+                                <div class="NavbarFooter-links NavbarFooter-mainLinks">
+                                    <div class="NavbarFooter-linksLeft">
+                                        <div class="NavbarFooter-link NavbarFooter-mainLink"><a href="https://careers.blizzard.com/" class="NavbarFooter-anchor" data-id="careers" data-analytics="global-nav" data-analytics-placement="Footer - Careers">Empleos</a></div>
+                                        <div class="NavbarFooter-link NavbarFooter-mainLink"><a href="https://www.blizzard.com/company/about/" class="NavbarFooter-anchor" data-id="about" data-analytics="global-nav" data-analytics-placement="Footer - About">Información</a></div>
+                                        <div class="NavbarFooter-link NavbarFooter-mainLink"><a href="https://support.blizzard.com/" class="NavbarFooter-anchor" data-id="support" data-analytics="global-nav" data-analytics-placement="Footer - Support">Asistencia</a></div>
+                                    </div>
+                                    <div class="NavbarFooter-linksRight">
+                                        <div class="NavbarFooter-link NavbarFooter-mainLink"><a href="http://us.blizzard.com/company/about/contact.html" class="NavbarFooter-anchor" data-id="contact" data-analytics="global-nav">Contacto</a></div>
+                                        <div class="NavbarFooter-link NavbarFooter-mainLink"><a href="https://blizzard.gamespress.com/" class="NavbarFooter-anchor" data-id="press" data-analytics="global-nav" data-analytics-placement="Footer - Press">Prensa</a></div>
+                                        <div class="NavbarFooter-link NavbarFooter-mainLink"><a href="https://develop.battle.net/" class="NavbarFooter-anchor" data-id="api" data-analytics="global-nav" data-analytics-placement="Footer - Battle.net API">API</a></div>
+                                    </div>
                                 </div>
+                                <div class="NavbarFooter-copyright">©2020 Blizzard Entertainment, Inc. Todos los derechos reservados.</div>
+                                <div class="NavbarFooter-trademark">Todas las <a href="https://www.blizzard.com/legal/b04001c4-dc81-480d-a475-5e276e241e4f/">marcas comerciales</a> a las que se hace referencia son propiedad de sus respectivos dueños.</div>
+                                <div class="NavbarFooter-doNotSell NavbarFooter-trademark"><span>CA Residents only:</span> <a href="https://www.blizzard.com/legal/a97631bf-2b21-4755-a740-5934bd5cb632/" data-id="ccpa" data-analytics="global-nav" data-analytics-placement="Footer - ccpa">Do not sell my personal information</a></div>
+                                <div class="NavbarFooter-links NavbarFooter-subLinks">
+                                    <div class="NavbarFooter-link NavbarFooter-subLink"><a href="https://www.blizzard.com/es-es/legal/8c41e7e6-0b61-42c4-a674-c91d8e8d68d3/" class="NavbarFooter-anchor" data-id="privacy" data-analytics="global-nav" data-analytics-placement="Footer - Privacy">Privacidad</a></div>
+                                    <div class="NavbarFooter-link NavbarFooter-subLink"><a href="https://www.blizzard.com/legal/" class="NavbarFooter-anchor" data-id="legal" data-analytics="global-nav">Legal</a></div>
+                                    <div class="NavbarFooter-link NavbarFooter-subLink"><a href="https://www.blizzard.com/legal/511dbf9e-2b2d-4047-8243-4c5c65e0ebf1/" class="NavbarFooter-anchor" data-id="terms" data-analytics="global-nav" data-analytics-placement="Footer - Terms">Términos</a></div>
+                                </div>
+                                <div class="NavbarFooter-legal" data-disable-additional="" data-disable-legal="" data-legal-id="5730135" data-legal-url="https://navbar.blizzard.com/api/v4/nav/rating" data-country="CR"></div>
                             </div>
-                            <div class="NavbarFooter-copyright">©2020 Blizzard Entertainment, Inc. Todos los derechos reservados.</div>
-                            <div class="NavbarFooter-trademark">Todas las <a href="https://www.blizzard.com/legal/b04001c4-dc81-480d-a475-5e276e241e4f/">marcas comerciales</a> a las que se hace referencia son propiedad de sus respectivos dueños.</div>
-                            <div class="NavbarFooter-doNotSell NavbarFooter-trademark"><span>CA Residents only:</span> <a href="https://www.blizzard.com/legal/a97631bf-2b21-4755-a740-5934bd5cb632/" data-id="ccpa" data-analytics="global-nav" data-analytics-placement="Footer - ccpa">Do not sell my personal information</a></div>
-                            <div class="NavbarFooter-links NavbarFooter-subLinks">
-                                <div class="NavbarFooter-link NavbarFooter-subLink"><a href="https://www.blizzard.com/es-es/legal/8c41e7e6-0b61-42c4-a674-c91d8e8d68d3/" class="NavbarFooter-anchor" data-id="privacy" data-analytics="global-nav" data-analytics-placement="Footer - Privacy">Privacidad</a></div>
-                                <div class="NavbarFooter-link NavbarFooter-subLink"><a href="https://www.blizzard.com/legal/" class="NavbarFooter-anchor" data-id="legal" data-analytics="global-nav">Legal</a></div>
-                                <div class="NavbarFooter-link NavbarFooter-subLink"><a href="https://www.blizzard.com/legal/511dbf9e-2b2d-4047-8243-4c5c65e0ebf1/" class="NavbarFooter-anchor" data-id="terms" data-analytics="global-nav" data-analytics-placement="Footer - Terms">Términos</a></div>
-                            </div>
-                            <div class="NavbarFooter-legal" data-disable-additional="" data-disable-legal="" data-legal-id="5730135" data-legal-url="https://navbar.blizzard.com/api/v4/nav/rating" data-country="CR"></div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </footer>
             <div class="PersistentCta-space"></div>
             <div class="PersistentCtaMount PersistentCta--small" data-props='{"title":"Shadowlands","subtitle":"Próxima expansión","prepurchaseButton":{"text":"Precomprar","url":"http://shop.battle.net/product/world-of-warcraft-shadowlands?utm_source=worldofwarcraft.com","analytics":{"event":"ctaBuy","eventCategory":"cta-buy","eventAction":"pre-purchase","eventLabel":"persistent banner"}},"learnMoreLink":{"text":"Más información","url":"/shadowlands","analytics":{"event":"ctaOther","eventCategory":"cta-other","eventAction":"learn more","eventLabel":"persistent banner"}}}' media-medium="!PersistentCta--small PersistentCta--medium" media-large="!PersistentCta--medium PersistentCta--large" media-huge="!PersistentCta--large"></div>
         </div>
@@ -2593,12 +2572,12 @@
             </div>
         </div>
     </div>
-    <script src="https://assets.worldofwarcraft.com/static/scripts/navbar.js?v8.0.1"></script>
-    <script src="https://assets.worldofwarcraft.com/static/runtime.bdf97ad1141c1db9ee42.js"></script>
-    <script src="https://assets.worldofwarcraft.com/static/vendor.d4c884b0d0825ec270cc.js"></script>
-    <script src="https://assets.worldofwarcraft.com/static/strings.9acb760bf0b857790a5c.js"></script>
-    <script src="https://assets.worldofwarcraft.com/static/3.5890d9005602ecab6d0f.js"></script>
-    <script src="https://assets.worldofwarcraft.com/static/legacy-components.ba77a97bf2fd51b8aaa4.js"></script>
+    <script src="<?php echo base_url('assets/js/navbar.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/js/runtime.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/js/vendor.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/js/strings.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/js/3.5890d9005602ecab6d0f.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/js/legacy-components.js'); ?>"></script>
     <script>
         window.dispatchEvent(new CustomEvent("navbarAddFooterLinks", {
             detail: {

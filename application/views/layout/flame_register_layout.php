@@ -17,14 +17,14 @@
         }
     </script>
     <script type="text/javascript" src="https://us.battle.net/account/creation/static/js/account-creation/cookie-consent-filter-compat.js"></script>
-    <link rel="stylesheet" type="text/css" media="all" href="https://bnetus-a.akamaihd.net/account/creation/static/css/toolkit/blizzard-web.min.2g2mJ.css?v=58-1" />
-    <link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/creation/static/css/global.min.48VcP.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="https://bnetus-a.akamaihd.net/account/creation/static/css/toolkit/blizzard-web.min.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/creation/static/css/global.min.css" />
     <link rel="stylesheet" type="text/css" media="all" href="https://us.battle.net/account/creation/static/css/navbar.min.css" />
-    <link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/creation/static/css/account-creation/creation.min.38ZjP.css" />
-    <link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/creation/static/css/social/social.min.36tnr.css" />
-    <script type="text/javascript" src="//bnetus-a.akamaihd.net/account/creation/static/js/toolkit/third-party/jquery/jquery-1.11.0.1aJ0K.js"></script>
-    <script type="text/javascript" src="//bnetus-a.akamaihd.net/account/creation/static/js/toolkit/toolkit.min.3Crdu.js"></script>
-    <script type="text/javascript" src="//bnetus-a.akamaihd.net/account/creation/static/local-common/js/common.16hIS.js?v=58"></script>
+    <link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/creation/static/css/account-creation/creation.min.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/creation/static/css/social/social.min.css" />
+    <script type="text/javascript" src="//bnetus-a.akamaihd.net/account/creation/static/js/toolkit/third-party/jquery/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="//bnetus-a.akamaihd.net/account/creation/static/js/toolkit/toolkit.min.js"></script>
+    <script type="text/javascript" src="//bnetus-a.akamaihd.net/account/creation/static/local-common/js/common.js"></script>
     <script type="text/javascript">
         //<![CDATA[
         var Core = Core || {},

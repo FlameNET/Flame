@@ -55,9 +55,8 @@
                     </div>
                 </div>
                 <div class="control-group">
-                <input type="submit" class="btn btn-flat-login form-control" value="<?php echo lang("ctn_150") ?>"></p>
                     <button type="submit" class="btn btn-primary btn-large btn-block" data-loading-text="" tabindex="1">
-                        Iniciar sesión
+                        <?php echo lang("ctn_150") ?>
                         <i class="spinner-battlenet"></i>
                     </button>
                 </div>

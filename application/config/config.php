@@ -109,6 +109,51 @@ $config['available_languages'] = array(
 		"display_name" => "English",
 		"rtl_support" => 0,
 		"datatable_lang" => ""
+	),
+	"spanish" => array(
+		"display_name" => "Spanish",
+		"rtl_support" => 0,
+		"datatable_lang" => ""
+	),
+	"french" => array(
+		"display_name" => "French",
+		"rtl_support" => 0,
+		"datatable_lang" => ""
+	),
+	"portuguese" => array(
+		"display_name" => "Portuguese",
+		"rtl_support" => 0,
+		"datatable_lang" => ""
+	),
+	"italian" => array(
+		"display_name" => "Italian",
+		"rtl_support" => 0,
+		"datatable_lang" => ""
+	),
+	"deutsch" => array(
+		"display_name" => "Deutsch",
+		"rtl_support" => 0,
+		"datatable_lang" => ""
+	),
+	"russian" => array(
+		"display_name" => "Russian",
+		"rtl_support" => 0,
+		"datatable_lang" => ""
+	),
+	"korean" => array(
+		"display_name" => "Korean",
+		"rtl_support" => 0,
+		"datatable_lang" => ""
+	),
+	"taiwan" => array(
+		"display_name" => "Taiwan",
+		"rtl_support" => 0,
+		"datatable_lang" => ""
+	),
+	"chinese" => array(
+		"display_name" => "Chinese",
+		"rtl_support" => 0,
+		"datatable_lang" => ""
 	)
 );
 

@@ -18,26 +18,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-class IPN_Model extends CI_Model 
+if(!function_exists('ago_news'))
 {
+    function ago_news($time)
+    {
+        $periods    = array("seconds", "minute", "hour", "day", "week", "month", "year", "decade");
+        $lengths    = array("60", "60", "24", "7", "4.35", "12", "10");
+        $now        = time();
+        $difference = $now - $time;
+        $tense      = "ago";
 
-	public function log_ipn($ipn) 
-	{
-		$this->db->insert("ipn_log", array(
-			"data" => $ipn, 
-			"timestamp" => time(), 
-			"IP" => $_SERVER['REMOTE_ADDR']
-			)
-		);
-	}
+        for ($i=0; $difference >= $lengths[$i] && $i < count($lengths); $i++) { 
+            $difference /= $lengths[$i];
+        }
 
-	public function add_payment($data) 
-	{
-		$this->db->insert("payment_logs", $data);
-	}
+        $difference = round($difference);
 
-	public function get_payment_log_hash($hash) 
-	{
-		return $this->db->where("hash", $hash)->get("payment_logs");
-	}
+        if($difference != 1){
+            $periods[$i].="s";
+        }
+
+        return $difference." ".$periods[$i]." ago";
+    }
 }

@@ -36,6 +36,19 @@
  * @filesource
  */
 
+
+/*
+ *---------------------------------------------------------------
+ * APPLICATION Language Default
+ *---------------------------------------------------------------
+ */
+$expiration = 60 * 60 * 24 * 30 + time();
+
+if (!isset($_COOKIE['language'])) {
+    setcookie("language", "english", $expiration); 
+}
+
+
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT

@@ -18,26 +18,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-class IPN_Model extends CI_Model 
-{
+class News extends CI_Controller {
 
-	public function log_ipn($ipn) 
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model(array(
+            'news_model'
+        ));
+        $this->load->helper(array(
+            'str_helper'
+        ));
+    }
+	public function index()
 	{
-		$this->db->insert("ipn_log", array(
-			"data" => $ipn, 
-			"timestamp" => time(), 
-			"IP" => $_SERVER['REMOTE_ADDR']
-			)
-		);
-	}
+        $top_news = $this->news_model->getNewsTop();
 
-	public function add_payment($data) 
-	{
-		$this->db->insert("payment_logs", $data);
-	}
-
-	public function get_payment_log_hash($hash) 
-	{
-		return $this->db->where("hash", $hash)->get("payment_logs");
+		$this->template->loadContent("news/index", array(
+            'top_news' => $top_news
+        ));
 	}
 }
