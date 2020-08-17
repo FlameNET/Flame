@@ -27,15 +27,18 @@ class News extends CI_Controller {
             'news_model'
         ));
         $this->load->helper(array(
-            'str_helper'
+            'str_helper',
+            'news_helper'
         ));
     }
 	public function index()
 	{
-        $top_news = $this->news_model->getNewsTop();
+        $top_news   = $this->news_model->getNewsTop();
+        $news       = $this->news_model->getNews();
 
 		$this->template->loadContent("news/index", array(
-            'top_news' => $top_news
+            'top_news'  => $top_news,
+            'news'      => $news
         ));
 	}
 }

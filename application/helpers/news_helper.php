@@ -41,3 +41,39 @@ if(!function_exists('ago_news'))
         return $difference." ".$periods[$i]." ago";
     }
 }
+
+
+
+if (!function_exists('html_excerpt'))
+{
+    function html_excerpt( $str, $count= 500, $end_char = '&#8230;' ) {
+        $str = strip_all_tags( $str, true );
+        $str = mb_substr( $str, 0, $count );
+
+        // remove part of an entity at the end
+        $str = preg_replace( '/&[^;\s]{0,6}$/', '', $str );
+        return $str.$end_char;
+    }
+}
+
+
+/**
+ * Properly strip all HTML tags including script and style
+ *
+ * @param string $string String containing HTML tags
+ * @param bool $remove_breaks optional Whether to remove left over line breaks and white space chars
+ * @return string The processed string.
+ */
+
+if (!function_exists('strip_all_tags'))
+{
+    function strip_all_tags($string, $remove_breaks = false) {
+        $string = preg_replace( '@<(script|style)[^>]*?>.*?</\\1>@si', '', $string );
+        $string = strip_tags($string);
+
+        if ( $remove_breaks ) {
+            $string = preg_replace('/[\r\n\t ]+/', ' ', $string);
+        }
+        return trim( $string );
+    }
+}

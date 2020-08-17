@@ -19,6 +19,13 @@
 
 Class News_Model extends CI_Model 
 {
+    public function getNews($id = 'NULL')
+    {
+        $query = $this->db->query("CALL `sp_news`({$id}, '{$_COOKIE['language']}');");
+        mysqli_next_result($this->db->conn_id);
+        return $query;
+    }
+
     public function getNewsTop($id = 'NULL')
     {
         $query = $this->db->query("CALL `sp_news_top`({$id}, '{$_COOKIE['language']}');");
